@@ -1,0 +1,37 @@
+/* Laddar in ett anpassat typsnitt */
+@font-face{
+    font-family: MinFont; /* Namnet på det anpassade typsnittet */
+    src: url('myfont.woff2') format('woff2'), /* Länk till WOFF2-typsnittsfilen */
+         url('myfont.woff') format('woff'); /* Länk till WOFF-typsnittsfilen */
+}
+
+/* Stilar för kroppen */
+
+/* Använder det anpassade typsnittet för texten i kroppen, med fallback till Arial, Helvetica, sans-serif */
+body{
+    font-family: MinFont, Arial, Helvetica, sans-serif;
+}
+
+/* Centrerar innehållet och använder grid-layout för att organisera det */
+.wrapper{
+    text-align: center; /* Centrerar texten */
+    display: grid; /* Använder grid-layout */
+    width: 100%; /* Tar upp hela bredden av förälderelementet */
+    grid-template-rows: 50px 50px auto 60px; /* Storleksdefinition för rader i grid */
+    grid-template-columns: 1fr; /* Storleksdefinition för kolumner i grid */
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer"; /* Bestämmer layout-områden för elementen */
+}
+
+/* Media Query för skärmar mindre än 768px (mobil) */
+@media screen and (max-width: 768px){
+    
+}
+
+/* Media Query för skärmar större än 768px (dator) */
+@media screen and (min-width: 769px){
+
+}

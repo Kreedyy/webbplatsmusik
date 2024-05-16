@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startsida</title>
+    <meta charset="UTF-8"> <!-- Definierar teckenuppsättningen för dokumentet -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ange skärmstorlek och zoom-nivå -->
+    <link rel="stylesheet" href="style.css"> <!-- Länkar till extern CSS-fil -->
+    <script src="https://kit.fontawesome.com/475006416d.js" crossorigin="anonymous" defer></script> <!-- Länkar till Font Awesome-ikoner med JavaScript -->
+    <title>Startsida</title> <!-- Titeln på webbsidan -->
 </head>
 <body>
     <div class="wrapper">
         <header role="banner">
-
+            <ul> <!-- En osorterad lista -->
+                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li> <!-- Länk till startsidan med ett husikon -->
+                <li><a href="index.html"><p>Hem</p></a></li> <!-- Länk till startsidan med text "Hem" -->
+                <li> <!-- Sökformulär -->
+                    <form> <!-- Startar ett formulär för att söka artister -->
+                        <input type="text" placeholder="Sök artister" id="searchInput" list="autocompleteOptions"> <!-- Inmatningsfält för att söka artister -->
+                        <datalist id="autocompleteOptions"> <!-- En datalista för autocomplete-sökning -->
+                            <option value="Alex G"></option> <!-- Autocomplete-alternativ -->
+                            <option value="Hoodrich Pablo Juan"></option> <!-- Autocomplete-alternativ -->
+                            <option value="Jayo Felony"></option> <!-- Autocomplete-alternativ -->
+                            <option value="Joost Klein"></option> <!-- Autocomplete-alternativ -->
+                            <option value="Method Man"></option> <!-- Autocomplete-alternativ -->
+                            <option value="My Bloody Valentine"></option> <!-- Autocomplete-alternativ -->
+                        </datalist>
+                    </form>
+                </li>
+                <li><a href="loggain.html"><p>Logga in</p></a></li> <!-- Länk till inloggningsidan med text "Logga in" -->
+            </ul>
         </header>
         <nav role="navigation">
-
+            <ul> <!-- En osorterad lista för navigationslänkar -->
+                <li><a href="senasteartister.html"><p>Senaste artister</p></a></li> <!-- Länk till senaste artisterna med text "Senaste artister" -->
+                <li><a href="topplistan.html"><p>Topplistan</p></a></li> <!-- Länk till topplistan med text "Topplistan" -->
+                <li><a href="laggtillartist.html"><p>Lägg till artist</p></a></li> <!-- Länk till sidan för att lägga till artist med text "Lägg till artist" -->
+            </ul>
         </nav>
         <main role="main">
 
