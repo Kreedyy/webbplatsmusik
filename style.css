@@ -16,14 +16,57 @@ body{
 .wrapper{
     text-align: center; /* Centrerar texten */
     display: grid; /* Använder grid-layout */
-    width: 100%; /* Tar upp hela bredden av förälderelementet */
     grid-template-rows: 50px 50px auto 60px; /* Storleksdefinition för rader i grid */
-    grid-template-columns: 1fr; /* Storleksdefinition för kolumner i grid */
     grid-template-areas:
         "header"
         "nav"
         "main"
         "footer"; /* Bestämmer layout-områden för elementen */
+}
+
+header{
+    grid-area: header;
+}
+
+/*Header Nav gemensamma saker*/
+header ul, nav ul{
+    padding: 0; /* Inre utfyllnad */
+    list-style-type: none; /* Ingen punktlista */
+    margin: 0; /* Yttre marginal */
+    height: 100%; /* Höjden på elementet */
+    align-items: center; /* Centrerar vertikalt */
+    font-size: 1.75em; /* Textstorlek */
+}
+
+header ul li, nav ul li{
+    width: fit-content;
+    height: fit-content;
+}
+
+header ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header form{
+    padding-bottom: 10px;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav{
+    grid-area: nav;
+}
+
+main{
+    grid-area: main;
+}
+
+footer{
+    grid-area: footer;
 }
 
 /* Media Query för skärmar mindre än 768px (mobil) */
