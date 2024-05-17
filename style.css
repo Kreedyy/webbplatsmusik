@@ -5,16 +5,21 @@
          url('myfont.woff') format('woff'); /* Länk till WOFF-typsnittsfilen */
 }
 
+
+
 /* Stilar för kroppen */
 
 /* Använder det anpassade typsnittet för texten i kroppen, med fallback till Arial, Helvetica, sans-serif */
 body{
     font-family: MinFont, Arial, Helvetica, sans-serif;
+    margin: 0;
+    height: 100vh;
 }
 
 /* Centrerar innehållet och använder grid-layout för att organisera det */
 .wrapper{
     text-align: center; /* Centrerar texten */
+    height: 100%;
     display: grid; /* Använder grid-layout */
     grid-template-rows: 50px 50px auto 60px; /* Storleksdefinition för rader i grid */
     grid-template-areas:
@@ -49,7 +54,13 @@ header ul{
 }
 
 header form{
-    padding-bottom: 10px;
+    display: flex;
+}
+
+header input{
+    height: 24px;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul{
@@ -63,15 +74,44 @@ nav{
 
 main{
     grid-area: main;
+    min-height: calc(100%-160px);
+}
+
+article{
+    word-wrap: break-word;
 }
 
 footer{
     grid-area: footer;
 }
 
+address p{
+    margin: 0;
+}
+
+.knapp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 16px;
+    background: linear-gradient(to bottom right, hsl(187, 100%, 50%), rgb(183, 0, 255));
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    width: 50%;
+    max-width: 350px;
+    height: 40px;
+}
+
+/*https://medium.com/@zac_heisey/7-alternatives-to-the-div-html-tag-7c888c7b5036*/
+
 /* Media Query för skärmar mindre än 768px (mobil) */
 @media screen and (max-width: 768px){
-    
+    header, nav{
+        font-size: 1.25ch;
+    }
 }
 
 /* Media Query för skärmar större än 768px (dator) */
