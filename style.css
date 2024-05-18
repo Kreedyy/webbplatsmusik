@@ -1,8 +1,7 @@
 /* Laddar in ett anpassat typsnitt */
 @font-face{
     font-family: MinFont; /* Namnet på det anpassade typsnittet */
-    src: url('myfont.woff2') format('woff2'), /* Länk till WOFF2-typsnittsfilen */
-         url('myfont.woff') format('woff'); /* Länk till WOFF-typsnittsfilen */
+    src: url('Roboto-Regular.ttf') format('truetype'), /* Länk till ttf-typsnittsfilen */
 }
 
 
@@ -31,6 +30,8 @@ body{
 
 header{
     grid-area: header;
+    background: linear-gradient(to right, hsl(187, 100%, 50%), hsl(283, 100%, 50%));
+    z-index: 1000;
 }
 
 /*Header Nav gemensamma saker*/
@@ -58,9 +59,33 @@ header form{
 }
 
 header input{
-    height: 24px;
+    height: 26px;
     padding: 0;
     margin: 0;
+}
+
+header a, header a:link, header a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+header a:focus, header a:hover, header a:active{
+    color: white;
+}
+
+nav{
+    grid-area: nav;
+    background: black;
+    z-index: 1000;
+}
+
+nav a, nav a:link, nav a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+nav a:focus, nav a:hover, nav a:active{
+    color: hsl(187, 100%, 50%);
 }
 
 nav ul{
@@ -68,41 +93,78 @@ nav ul{
     justify-content: space-evenly;
 }
 
-nav{
-    grid-area: nav;
-}
-
 main{
     grid-area: main;
-    min-height: calc(100%-160px);
-}
-
-article{
-    word-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, hsl(187, 100%, 50%), hsl(283, 100%, 50%));
 }
 
 footer{
     grid-area: footer;
+    background: #101114;
 }
 
-address p{
-    margin: 0;
+footer *{
+    color: white;
 }
 
-.knapp{
+article{
+    animation: fallNer 1s ease forwards;
+    position: relative;
+    top: -500px;
+    transition: transform 0.2s ease;
+    word-wrap: break-word;
+    background: #101114;
+    border: 2px solid white;
+    border-radius: 16px;
+    height: fit-content;
+    max-width: 500px;
+    margin: 16px;
+    font-size: 1.25em;
+}
+
+article > p{
+    text-align: justify;
+    margin: 16px;
+}
+
+article *{
+    color: rgb(255, 255, 255);
+}
+
+article > a{
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 16px;
     background: linear-gradient(to bottom right, hsl(187, 100%, 50%), rgb(183, 0, 255));
     color: #000000;
     text-decoration: none;
     font-weight: bold;
     width: 50%;
+    min-width: 230px;
     max-width: 350px;
-    height: 40px;
+    height: fit-content;
+    margin-bottom: 16px;
+}
+
+address p{
+    margin: 0;
+}
+
+
+
+@keyframes fallNer{
+    from{
+        top: -500px; /* Start position */
+    }
+    to{
+        top: 0; /* End position */
+    }
 }
 
 /*https://medium.com/@zac_heisey/7-alternatives-to-the-div-html-tag-7c888c7b5036*/
@@ -111,6 +173,14 @@ address p{
 @media screen and (max-width: 768px){
     header, nav{
         font-size: 1.25ch;
+    }
+
+    #searchInput{
+        width: 25vw;
+    }
+
+    article > p{
+        text-align:initial;
     }
 }
 
