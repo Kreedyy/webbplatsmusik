@@ -98,7 +98,12 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     background: linear-gradient(to right, hsl(187, 100%, 50%), hsl(283, 100%, 50%));
+}
+
+main:has(iframe):has(audio){
+    align-items: normal;
 }
 
 footer{
@@ -152,11 +157,24 @@ article > a{
     margin-bottom: 16px;
 }
 
+article img{
+    width: 50%;
+    border: 2px solid white;
+}
+
 address p{
     margin: 0;
 }
 
+iframe, video, img, audio{
+    max-width: 100%;
+}
 
+iframe{
+    width: 100%;
+    border: none;
+    height: fit-content;
+}
 
 @keyframes fallNer{
     from{

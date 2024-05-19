@@ -4,15 +4,19 @@
     <meta charset="UTF-8"> <!-- Definierar teckenuppsättningen för dokumentet -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ange skärmstorlek och zoom-nivå -->
     <link rel="stylesheet" href="style.css"> <!-- Länkar till extern CSS-fil -->
-    <script src="https://kit.fontawesome.com/475006416d.js" crossorigin="anonymous" defer></script> <!-- Länkar till Font Awesome-ikoner med JavaScript -->
-    <title>Startsida</title> <!-- Titeln på webbsidan -->
+    <script src="https://kit.fontawesome.com/475006416d.js" crossorigin="anonymous"></script> <!-- Länkar till Font Awesome-ikoner med JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js" defer></script>
+    <script src="sorteratable.js" defer></script>
+    <script src="sumberäknare.js" defer></script>
+    <title>Topplistan</title> <!-- Titeln på webbsidan -->
 </head>
 <body>
     <div class="wrapper">
         <header role="banner">
             <ul> <!-- En osorterad lista -->
                 <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li> <!-- Länk till startsidan med ett husikon -->
-                <li><a href="index.html"><p>Hem</p></a></li> <!-- Länk till startsidan med text "Hem" -->
+                <li><a href="index.html">Hem</a></li> <!-- Länk till startsidan med text "Hem" -->
                 <li> <!-- Sökformulär -->
                     <form> <!-- Startar ett formulär för att söka artister -->
                         <input type="text" placeholder="Sök artister" id="searchInput" list="autocompleteOptions"> <!-- Inmatningsfält för att söka artister -->
@@ -26,7 +30,7 @@
                         </datalist>
                     </form>
                 </li>
-                <li><a href="loggain.html"><p>Logga in</p></a></li> <!-- Länk till inloggningsidan med text "Logga in" -->
+                <li><a href="loggain.html">Logga in</a></li> <!-- Länk till inloggningsidan med text "Logga in" -->
             </ul>
         </header>
         <nav role="navigation">
@@ -37,7 +41,63 @@
             </ul>
         </nav>
         <main role="main">
-            
+            <table> <!-- Tabell med id "myTable" och klass "tablesorter" -->
+                <caption>Topplista över artister som lagts till</caption> <!-- Bildtext för tabellen -->
+                <thead> <!-- Tabellhuvud -->
+                    <tr> <!-- Rad i tabellhuvud -->
+                        <th scope="col">Plats</th> <!-- Kolumnhuvud med omfång "col" -->
+                        <th scope="col">Artist</th> <!-- Kolumnhuvud med omfång "col" -->
+                        <th scope="col">Lyssnare<br>(Spotify)</th> <!-- Kolumnhuvud med omfång "col" -->
+                        <th scope="col">Kändaste låt<br>(Antal lyssningar Spotify)</th> <!-- Kolumnhuvud med omfång "col" -->
+                    </tr>
+                </thead>
+                <tbody> <!-- Tabellkropp -->
+                    <tr> <!-- Rad i tabellkropp -->
+                        <td>2</td> <!-- Datacell -->
+                        <td><a href="https://open.spotify.com/artist/6s5ubAp65wXoTZefE01RNR?si=WZkL_P83QjeXglZYu8IeoQ">Joost Klein</a></td> <!-- Datacell med länk -->
+                        <td>4 688 000</td> <!-- Datacell -->
+                        <td>132 431 000<br>(<a href="https://open.spotify.com/track/7b8Z1GU2plJy3aASZTiolF?si=be168ebea50e4709">Friesenjung</a>)</td> <!-- Datacell med länk -->
+                    </tr>
+                    <tr> <!-- Rad i tabellkropp -->
+                        <td>1</td> <!-- Datacell -->
+                        <td><a href="https://open.spotify.com/artist/6lcwlkAjBPSKnFBZjjZFJs?si=-3Hx_XorRZKlBiFO1yhKGA">Alex G</a></td> <!-- Datacell med länk -->
+                        <td>7 854 000</td> <!-- Datacell -->
+                        <td>209 556 000<br>(<a href="https://open.spotify.com/track/36TbBJ7mLPOZMAYs0p4mxb?si=b6c53842f0174bbf">Mary</a>)</td> <!-- Datacell med länk -->
+                    </tr>
+                    <tr> <!-- Rad i tabellkropp -->
+                        <td>5</td> <!-- Datacell -->
+                        <td><a href="https://open.spotify.com/artist/1ZLO8d7zll1WeQJUHaxQer?si=sb7MpYjmTlaPZXIDZG7Wug">Hoodrich Pablo Juan</a></td> <!-- Datacell med länk -->
+                        <td>566 000</td> <!-- Datacell -->
+                        <td>60 371 000<br>(<a href="https://open.spotify.com/track/7Ay41oJQbfdIrhfNy46PuD?si=40bc1b34b13640b8">We Don't Luv Em</a>)</td> <!-- Datacell med länk -->
+                    </tr>
+                    <tr> <!-- Rad i tabellkropp -->
+                        <td>4</td> <!-- Datacell -->
+                        <td><a href="https://open.spotify.com/artist/3G3Gdm0ZRAOxLrbyjfhii5?si=NremczbVTKmrnscXkMZ1vw">My Bloody Valentine</a></td> <!-- Datacell med länk -->
+                        <td>1 191 000</td> <!-- Datacell -->
+                        <td>88 141 000<br>(<a href="https://open.spotify.com/track/2KylN9C0wNbzLgZNTG9oiU?si=eda7d9ba2ea64f18">when you sleep</a>)</td> <!-- Datacell med länk -->
+                    </tr>
+                    <tr> <!-- Rad i tabellkropp -->
+                        <td>3</td> <!-- Datacell -->
+                        <td><a href="https://open.spotify.com/artist/4VmEWwd8y9MCLwexFMdpwt?si=Y-TenN_US72Tho2S-PJPaA">Method Man</a></td> <!-- Datacell med länk -->
+                        <td>4 042 000</td> <!-- Datacell -->
+                        <td>186 761 000<br>(<a href="https://open.spotify.com/track/4anqYZt4APNlFwQixpbdZR?si=fe40324baa044601">Da Rockwilder</a>)</td> <!-- Datacell med länk -->
+                    </tr>
+                    <tr> <!-- Rad i tabellkropp -->
+                        <td>6</td> <!-- Datacell -->
+                        <td><a href="https://open.spotify.com/artist/188HWxEQMjCaa7kf3ZGjwc?si=hh-UwsKZSkqyHjBDEqMAoA">Jayo Felony</a></td> <!-- Datacell med länk -->
+                        <td>132 000</td> <!-- Datacell -->
+                        <td>7 924 000<br>(<a href="https://open.spotify.com/track/4NaDFGF9v1loMWf6sHmbrk?si=dbec979118db45a7">Whatcha Gonna Do</a>)</td> <!-- Datacell med länk -->
+                    </tr>
+                </tbody>
+                <tfoot> <!-- Tabellfot -->
+                    <tr> <!-- Rad i tabellfot -->
+                        <th scope="row">Summa</th> <!-- Datacell med omfång "row" -->
+                        <td>N/A</td> <!-- Datacell -->
+                        <td id="sumLyssnare"></td> <!-- Datacell med id "sumLyssnare" -->
+                        <td id="sumLåt"></td> <!-- Datacell med id "sumLåt" -->
+                    </tr>
+                </tfoot>
+            </table>
         </main>
         <footer role="contentinfo">
             <address> <!-- Kontaktinformation -->
