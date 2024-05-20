@@ -1,7 +1,7 @@
 /* Laddar in ett anpassat typsnitt */
 @font-face{
     font-family: MinFont; /* Namnet på det anpassade typsnittet */
-    src: url('Roboto-Regular.ttf') format('truetype'), /* Länk till ttf-typsnittsfilen */
+    src: url('Roboto-Regular.ttf') format('truetype') /*Länk till ttf-typsnittsfilen*/
 }
 
 
@@ -243,6 +243,21 @@ table a:active{
 
 address{
    display: grid; 
+}
+
+main form{
+    width: 1000px;
+    height: fit-content;
+}
+
+main fieldset{
+    width: calc(100% - 28px);
+    margin: 0;
+    height: 100%;
+}
+
+legend{
+    text-align: left;
 }
 
 @keyframes fallNer{

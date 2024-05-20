@@ -11,8 +11,16 @@
     <div class="wrapper">
         <header role="banner">
             <ul> <!-- En osorterad lista -->
-                <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li> <!-- Länk till startsidan med ett husikon -->
-                <li><a href="index.html">Hem</a></li> <!-- Länk till startsidan med text "Hem" -->
+                <li>
+                    <a href="index.html">
+                        <i class="fa-solid fa-house"></i>
+                    </a>
+                </li> <!-- Länk till startsidan med ett husikon -->
+                <li>
+                    <a href="index.html">
+                        Hem
+                    </a>
+                </li> <!-- Länk till startsidan med text "Hem" -->
                 <li> <!-- Sökformulär -->
                     <form> <!-- Startar ett formulär för att söka artister -->
                         <input type="text" placeholder="Sök artister" id="searchInput" list="autocompleteOptions"> <!-- Inmatningsfält för att söka artister -->
@@ -26,24 +34,53 @@
                         </datalist>
                     </form>
                 </li>
-                <li><a href="loggain.html">Logga in</a></li> <!-- Länk till inloggningsidan med text "Logga in" -->
+                <li>
+                    <a href="loggain.html">
+                        Logga in
+                    </a>
+                </li> <!-- Länk till inloggningsidan med text "Logga in" -->
             </ul>
         </header>
         <nav role="navigation">
             <ul> <!-- En osorterad lista för navigationslänkar -->
-                <li><a href="senasteartister.html">Senaste artister</a></li> <!-- Länk till senaste artisterna med text "Senaste artister" -->
-                <li><a href="topplistan.html">Topplistan</a></li> <!-- Länk till topplistan med text "Topplistan" -->
-                <li><a href="laggtillartist.html">Lägg till artist</a></li> <!-- Länk till sidan för att lägga till artist med text "Lägg till artist" -->
+                <li>
+                    <a href="senasteartister.html">
+                        Senaste artister
+                    </a>
+                </li> <!-- Länk till senaste artisterna med text "Senaste artister" -->
+                <li>
+                    <a href="topplistan.html">
+                        Topplistan
+                    </a>
+                </li> <!-- Länk till topplistan med text "Topplistan" -->
+                <li>
+                    <a href="laggtillartist.html">
+                        Lägg till artist
+                    </a>
+                </li> <!-- Länk till sidan för att lägga till artist med text "Lägg till artist" -->
             </ul>
         </nav>
         <main role="main">
-            
+            <form action="index.html" method="post">
+                <fieldset>
+                    <legend>
+                        Logga in
+                    </legend>
+                </fieldset>
+                <button type="submit">Logga in</button>
+            </form>
         </main>
         <footer role="contentinfo">
             <address> <!-- Kontaktinformation -->
-                <p>Kontakta oss:</p> <!-- Rubrik för kontaktinformationen -->
-                <a href="mailto:exempel@gmail.com">Mail: exempel@gmail.com</a> <!-- Mailto-länk för att skicka e-post -->
-                <a href="tel:+0721234567">Telefon: 072 123 45 67</a> <!-- Telefonlänk -->
+                <p>
+                    Kontakta oss:
+                </p> <!-- Rubrik för kontaktinformationen -->
+                <a href="mailto:exempel@gmail.com">
+                    Mail: exempel@gmail.com
+                </a> <!-- Mailto-länk för att skicka e-post -->
+                <a href="tel:+0721234567">
+                    Telefon: 072 123 45 67
+                </a> <!-- Telefonlänk -->
             </address>
         </footer>
     </div>
