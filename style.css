@@ -234,11 +234,11 @@ table a:focus{
 }
 
 table a:hover{
-    color: rgb(0, 102, 255);
+    color: hsl(216, 100%, 50%);
 }
 
 table a:active{
-    color: rgb(0, 195, 255);
+    color: #00c3ff;
 }
 
 address{
@@ -251,14 +251,24 @@ main form{
 }
 
 main fieldset{
-    width: calc(100% - 28px);
+    width: calc(100% - 32px);
+    padding-left: 14px;
+    padding-right: 14px;
     margin: 0;
     height: 100%;
 }
 
 legend{
     text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
+
+textarea{
+    resize: none;
+}
+
 
 @keyframes fallNer{
     from{
@@ -290,3 +300,8 @@ legend{
 @media screen and (min-width: 769px){
 
 }
+
+
+
+
+

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ange skärmstorlek och zoom-nivå -->
     <link rel="stylesheet" href="style.css"> <!-- Länkar till extern CSS-fil -->
     <script src="https://kit.fontawesome.com/475006416d.js" crossorigin="anonymous"></script> <!-- Länkar till Font Awesome-ikoner med JavaScript -->
+    <script src="gömlösen.js"></script>
     <title>Logga in</title> <!-- Titeln på webbsidan -->
 </head>
 <body>
@@ -66,8 +67,44 @@
                     <legend>
                         Logga in
                     </legend>
+
+                    <label for="användarnamn">Användarnamn:</label>
+                    <input type="text" name="användarnamn" placeholder="Användarnamn" required>
+                    
+                    <label for="lösenord">Lösenord:</label>
+                    <input type="password" name="lösenord" required>
+
+                    <label for="visa">Visa lösenord</label>
+                    <input type="checkbox" name="visa" value="nej" unchecked>
+                    
+                    <label for="epost">E-post:</label>
+                    <input type="email" name="epost" placeholder="Ange din e-post" required>
+                    
+                    <label for="information">Om mig:</label>
+                    <textarea name="information" placeholder="Skriv om dig själv här"></textarea>
+                    
+                    <label for="kön">Kön</label>
+                    <input type="radio" name="kön" value="man" checked>
+                    <label for="kön">Man</label>
+                    <input type="radio" name="kön" value="kvinna">
+                    <label for="kön">Kvinna</label>
+                    
+                    <label for="prenumerera">Prenumerera</label>
+                    <input type="checkbox" name="prenumerera" value="ja" checked>
+                    
+                    <label for="kategori">Välj ett genre</label>
+                    <select name="kategori" required>
+                        <option value="teknologi" selected>Hip hop</option>
+                        <option value="vetenskap">Pop</option>
+                        <option value="konst">Indie rock</option>
+                    </select>
+                    
+                    <label for="födelsedatum">Födelsedatum</label>
+                    <input type="date" name="födelsedatum" required>
+            
+            
+                    <button type="submit" value="Skicka">Logga in</button>
                 </fieldset>
-                <button type="submit">Logga in</button>
             </form>
         </main>
         <footer role="contentinfo">
