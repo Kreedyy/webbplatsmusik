@@ -281,7 +281,6 @@ textarea{
 }
 
 legend {
-    grid-column: 1 / -1;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
