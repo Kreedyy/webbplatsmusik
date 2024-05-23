@@ -124,8 +124,8 @@ footer *{
 
 article{
     word-wrap: break-word;
-    background: #101114;
-    border: 2px solid white;
+    background: #ffffff;
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 16px;
     height: fit-content;
     max-width: 500px;
@@ -139,7 +139,7 @@ article > p{
 }
 
 article *{
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 article > a{
@@ -147,7 +147,7 @@ article > a{
     justify-content: center;
     align-items: center;
     margin: auto;
-    border: 2px solid white;
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 16px;
     background: linear-gradient(to bottom right, hsl(187, 100%, 50%), rgb(183, 0, 255));
     color: #000000;
@@ -160,6 +160,22 @@ article > a{
     margin-bottom: 16px;
 }
 
+.knappbredvid{
+    display: inline-block;
+    margin: 0 8px; /* Add some horizontal space between the buttons */
+    margin-bottom: 16px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 16px;
+    background: linear-gradient(to bottom right, hsl(187, 100%, 50%), rgb(183, 0, 255));
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    width: 45%; /* Adjust width to ensure they fit side by side */
+    min-width: 100px;
+    height: fit-content;
+    padding: 10px 0; /* Add padding to ensure better click area */
+}
+
 article img{
     width: 50%;
     border: 2px solid white;
@@ -168,6 +184,8 @@ article img{
 
 article audio{
     margin-bottom: 16px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 50px;
 }
 
 address p{
@@ -182,7 +200,11 @@ article iframe, article video{
 article iframe[src*="spotify.com"]{
     width: 100%; 
     height: 152px;
-    border-radius:16px
+    border-radius:16px;
+}
+
+article img{
+    border: 2px solid black;
 }
 
 iframe, video, img, audio{
@@ -257,18 +279,32 @@ main fieldset{
     padding-left: 14px;
     padding-right: 14px;
     margin: 0;
-
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 1rem 10px;
-
     gap: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    font-size: 1.25em;
 }
 
+fieldset label{
+    height: fit-content;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+input[name="visa"], input[value="man"], input[value="kvinna"], input[value="annat"], input[name="prenumerera"]{
+    width: fit-content!important;
+    margin: 0!important;
+}
+
+#huvudkön{
+    grid-column: 1 / -1;
+    justify-self: left;
+    margin-left: 84px;
+}
 
 legend{
     text-align: left;
@@ -308,16 +344,21 @@ button {
     grid-column: 1 / -1;
     padding: 0.75rem;
     border: none;
-    border-radius: 4px;
-    background-color: #007BFF;
-    color: white;
-    font-size: 1rem;
+    border-radius: 8px;
+    background-color: hsl(205, 100%, 50%);
+    color: rgb(0, 0, 0);
+    font-size: 1.75ch;
     cursor: pointer;
-    justify-self: start;
+    justify-self: center;
+    border: 1px solid black;
 }
 
-button:hover {
-    background-color: #0056b3;
+button:focus{
+    background-color: hsl(205, 100%, 35%);
+}
+
+button:hover{
+    background-color: hsl(205, 100%, 35%);
 }
 
 
@@ -330,7 +371,17 @@ button:hover {
     }
 }
 
-/*https://medium.com/@zac_heisey/7-alternatives-to-the-div-html-tag-7c888c7b5036*/
+@media screen and (max-width: 486px){
+    .knappbredvid{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 550px){
+    main form{
+        width: 90vw;
+    }
+}
 
 /* Media Query för skärmar mindre än 768px (mobil) */
 @media screen and (max-width: 768px){
@@ -346,13 +397,3 @@ button:hover {
         text-align:initial;
     }
 }
-
-/* Media Query för skärmar större än 768px (dator) */
-@media screen and (min-width: 769px){
-
-}
-
-
-
-
-
