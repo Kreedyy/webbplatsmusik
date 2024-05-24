@@ -73,6 +73,10 @@ header a:focus, header a:hover, header a:active{
     color: white;
 }
 
+input[list]{
+    height: 30px;
+}
+
 nav{
     grid-area: nav;
     background: black;
@@ -292,10 +296,6 @@ form[action="tack.html"]{
     width: 1000px;
 }
 
-#tvåspalt{
-    grid-template-columns: 1fr 1fr;
-}
-
 #tvåspalt *{
     width: fit-content;
 }
@@ -401,7 +401,7 @@ button:hover{
 /* Media Query för skärmar mindre än 768px (mobil) */
 @media screen and (max-width: 768px){
     header, nav{
-        font-size: 1.25ch;
+        font-size: 1.4ch;
     }
 
     #searchInput{
