@@ -179,7 +179,6 @@ article > a{
 article img{
     width: 50%;
     border: 2px solid white;
-    margin-bottom: 16px;
 }
 
 article audio{
@@ -289,6 +288,18 @@ main fieldset{
     font-size: 1.25em;
 }
 
+form[action="tack.html"]{
+    width: 1000px;
+}
+
+#tvåspalt{
+    grid-template-columns: 1fr 1fr;
+}
+
+#tvåspalt *{
+    width: fit-content;
+}
+
 fieldset label{
     height: fit-content;
     margin-top: auto;
@@ -314,6 +325,10 @@ legend{
 
 textarea{
     resize: none;
+}
+
+textarea[name="biograf"]{
+    height: 200px;
 }
 
 legend {
