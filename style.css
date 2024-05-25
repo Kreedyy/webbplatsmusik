@@ -293,11 +293,54 @@ main fieldset{
 }
 
 form[action="tack.html"]{
-    width: 1000px;
+    width: 80vw;
+    height: 70vh;
 }
 
-#tvåspalt *{
-    width: fit-content;
+#tvåspalt {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 6fr
+}
+
+#tvåspalt input, #tvåspalt select{
+    max-height: 38px;
+}
+
+#tvåspalt input, #tvåspalt select{
+    max-width: 400px;
+    display: flex;
+    justify-self: center;
+}
+
+#tvåspalt textarea{
+    height: 100%;
+}
+
+#tvåspalt label, #tvåspalt input, #tvåspalt textarea{
+    grid-column: 1;
+    display: flex;
+    justify-self: center;
+}
+
+#tvåspalt label[for="media"], #tvåspalt select, #tvåspalt input[name="media_link"]{
+    grid-column: 2;
+    display: flex;
+    grid-row: 2;
+}
+
+#tvåspalt label[for="media"]{
+    grid-row: 1;
+}
+
+#tvåspalt input[name="media_link"]{
+    grid-row: 3;
+}
+
+#tvåspalt iframe, #tvåspalt video, #tvåspalt audio, #tvåspalt img{
+    grid-column: 2;
+    grid-row: 4 / span 2;
+    max-height: 100%;
 }
 
 fieldset label{

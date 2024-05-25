@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ange skärmstorlek och zoom-nivå -->
     <link rel="stylesheet" href="style.css"> <!-- Länkar till extern CSS-fil -->
     <script src="https://kit.fontawesome.com/475006416d.js" crossorigin="anonymous"></script> <!-- Länkar till Font Awesome-ikoner med JavaScript -->
+    <script src="laddamedia.js" defer></script>
     <title>Lägg till artist</title> <!-- Titeln på webbsidan -->
 </head>
 <body>
@@ -69,10 +70,17 @@
                     <label for="artist">Artist namn:</label>
                     <input type="text" name="artist" placeholder="Michael Jackson" required>
                     <label for="smeknamn">Artistens smeknamn:</label>
-                    <input type="text" name="artist" placeholder="King of pop">
+                    <input type="text" name="smeknamn" placeholder="King of pop">
                     <textarea name="biograf" placeholder="Michael Jackson föddes den 29 augusti 1958..."></textarea>
                     
-                    <button type="submit" value="Skicka">Logga in</button>
+                    <label for="media">Välj media av artist:</label>
+                    <select name="media">
+                        <option value="länk">Länk</option>
+                        <option value="video/ljud">Video/Ljud</option>
+                        <option value="bild">Bild</option>
+                    </select>
+                    
+                    <button type="submit" value="Skicka">Skicka</button>
                 </fieldset>
             </form>
         </main>
