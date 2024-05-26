@@ -1,9 +1,9 @@
-// Define a function to handle the select change event
+// Funktion för att hantera förändringar i select-elementet för media
 function handleMediaChange() {
     var selectedValue = this.value;
     var selectElement = this;
 
-    // Remove any existing media elements
+    // Ta bort eventuella befintliga mediaelement
     removeMedia();
 
     var siblingInputs = Array.from(selectElement.parentNode.children).filter(function(child) {
@@ -58,12 +58,12 @@ function handleMediaChange() {
     }
 }
 
-// Function to handle file selection and display the selected media
+// Funktion för att hantera filval och visa det valda mediet
 function handleFileSelect(event) {
     var file = event.target.files[0];
     if (!file) return;
 
-    // Remove any existing media elements before displaying the new one
+    // Ta bort eventuella befintliga mediaelement innan det nya visas
     removeMedia();
 
     var mediaElement;
@@ -85,23 +85,23 @@ function handleFileSelect(event) {
     }
 }
 
-// Function to remove all media elements (iframe, video, audio, img)
+// Funktion för att ta bort alla mediaelement (iframe, video, audio, img)
 function removeMedia() {
-    // Select all iframe, video, audio, and img elements
+    // Välj alla iframe, video, audio och img element
     var mediaElements = document.querySelectorAll('iframe, video, audio, img');
     
-    // Iterate over each media element and remove it
+    // Iterera över varje mediaelement och ta bort det
     mediaElements.forEach(function(element) {
         element.remove();
     });
 }
 
-// Add event listener to the select element
+// Lägg till händelselyssnare till select-elementet
 document.querySelector('select[name="media"]').addEventListener('change', handleMediaChange);
 
-// Trigger the event listener function on page load
+// Kör händelselyssnarefunktionen när sidan laddas
 document.addEventListener('DOMContentLoaded', function() {
-    // Call the handleMediaChange function directly to ensure the input is shown if 'Länk' is the default option
+    // Anropa handleMediaChange-funktionen direkt för att säkerställa att input visas om 'Länk' är standardalternativet
     handleMediaChange.call(document.querySelector('select[name="media"]'));
 });
 
@@ -112,18 +112,18 @@ document.addEventListener('DOMContentLoaded', function() {
             var media;
 
             if (value.includes('youtube.com') || value.includes('youtu.be')) {
-                // If it's a YouTube link
+                // Om det är en YouTube-länk
                 var videoId = getYouTubeVideoId(value);
                 if (videoId) {
                     createEmbed('https://www.youtube.com/embed/' + videoId);
-                    return; // Exit the function after creating the embed
+                    return; // Avsluta funktionen efter att ha skapat inbäddningen
                 }
             } else if (value.includes('open.spotify.com')) {
-                // If it's a Spotify link
+                // Om det är en Spotify-länk
                 createEmbed(value.replace('open.spotify.com', 'embed.spotify.com'));
-                return; // Exit the function after creating the embed
+                return; // Avsluta funktionen efter att ha skapat inbäddningen
             } else {
-                // If it's none of the supported platforms, show an alert message
+                // Om det inte är någon av de stödda plattformarna, visa ett varningsmeddelande
                 alert("Ogiltig media länk. Vänligen använd en länk från YouTube eller Spotify");
                 return;
             }
@@ -131,14 +131,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Function to extract YouTube video ID from URL
+// Funktion för att extrahera YouTube-video-ID från URL
 function getYouTubeVideoId(url) {
     var regExp = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
     var match = url.match(regExp);
-    return match && match[1]; // Return the video ID if match is found
+    return match && match[1]; // Returnera video-ID om matchning hittas
 }
 
-// Function to create embed element and replace input field
+// Funktion för att skapa inbäddningselement och ersätta input-fältet
 function createEmbed(embedSrc) {
     removeMedia();
     var embedElement = document.createElement('iframe');
@@ -149,5 +149,5 @@ function createEmbed(embedSrc) {
     embedElement.setAttribute('allowfullscreen', 'true');
 
     var inputField = document.querySelector('input[name="media_link"]');
-    inputField.insertAdjacentElement('afterend', embedElement); // Insert the iframe after the input field
+    inputField.insertAdjacentElement('afterend', embedElement); // Infoga iframen efter input
 }
