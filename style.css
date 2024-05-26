@@ -346,6 +346,11 @@ form[action="tack.html"]{
     justify-self: center;
 }
 
+#tvåspalt audio{
+    border: 2px solid black;
+    border-radius: 50px;
+}
+
 fieldset label{
     height: fit-content;
     margin-top: auto;
@@ -479,6 +484,7 @@ button:hover{
         grid-column: 1;
         grid-row: 9;
     }
+
 
     #tvåspalt button{
         grid-column: 1;
