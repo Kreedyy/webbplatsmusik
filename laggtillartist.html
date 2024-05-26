@@ -62,25 +62,37 @@
             </ul>
         </nav>
         <main role="main">
+            <!-- Huvudinnehållet på webbsidan -->
             <form action="tack.html" method="post">
+                <!-- Formulär för att lägga till en artist -->
                 <fieldset id="tvåspalt">
+                    <!-- Sektionen med två kolumner -->
                     <legend>
+                        <!-- Rubrik för formuläret -->
                         Lägg till artist
                     </legend>
                     <label for="artist">Artist namn:</label>
+                    <!-- Inmatningsfält för artistens namn -->
                     <input type="text" name="artist" placeholder="Michael Jackson" required>
                     <label for="smeknamn">Artistens smeknamn:</label>
+                    <!-- Inmatningsfält för artistens smeknamn -->
                     <input type="text" name="smeknamn" placeholder="King of pop">
                     <textarea name="biograf" placeholder="Michael Jackson föddes den 29 augusti 1958..."></textarea>
+                    <!-- Textfält för artistens biografi -->
                     
                     <label for="media">Välj media av artist:</label>
+                    <!-- Dropdown-lista för att välja typ av media -->
                     <select name="media">
                         <option value="länk">Länk</option>
+                        <!-- Alternativ för länk -->
                         <option value="video/ljud">Video/Ljud</option>
+                        <!-- Alternativ för video/ljud -->
                         <option value="bild">Bild</option>
+                        <!-- Alternativ för bild -->
                     </select>
                     
                     <button type="submit" value="Skicka">Skicka</button>
+                    <!-- Skicka-knapp för att skicka formuläret -->
                 </fieldset>
             </form>
         </main>

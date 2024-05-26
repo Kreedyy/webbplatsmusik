@@ -452,7 +452,7 @@ button:hover{
 /* Media Query för skärmar mindre än 768px (mobil) */
 @media screen and (max-width: 768px){
     header, nav{
-        font-size: 1.4ch;
+        font-size: 1.5ch;
     }
 
     form[action="tack.html"]{
